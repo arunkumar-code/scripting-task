@@ -1,0 +1,22 @@
+VICKY@DESKTOP-3PU79Q6 MINGW64 /c/scripting task
+$ pwd
+/c/scripting task
+
+VICKY@DESKTOP-3PU79Q6 MINGW64 /c/scripting task
+$ cat scripting.sh
+#!/bin/bash
+
+URL="https://guvi.in/"
+response_code=$(curl -s -o /dev/null -w "%{http_code}" $URL)
+if [[ $response_code -eq 200 ]]; then
+  echo "Success! Guvi.in is accessible (HTTP code: $response_code)"
+else
+  echo "Error! Guvi.in might be down or unreachable (HTTP code: $response_code)"
+fi
+
+VICKY@DESKTOP-3PU79Q6 MINGW64 /c/scripting task
+$ ./scripting.sh
+Error! Guvi.in might be down or unreachable (HTTP code: 301)
+
+VICKY@DESKTOP-3PU79Q6 MINGW64 /c/scripting task
+$
